@@ -1,6 +1,6 @@
-var boger = [];
-var bogliste = "";
-var storXverdi = 1000;
+var boger = []; //En liste til at huske hvilke bøger kunden har
+var bogliste = ""; //Et string som der kan vises når kunden øsnker at se deres liste over bøger.
+var storXverdi = 1000;//Bruges til at fjerne ting fra en skærm
 onEvent("button3", "click", function() {
   appendItem(boger,getText("text_input1"));
   setText("text_input1","");
@@ -146,17 +146,19 @@ onEvent("button1","click", function(){
   setPosition("button15",storXverdi,360,60,30);
   setPosition("text_input2",storXverdi,360,200,30);
 });
-
+//Ovenover er der skrevet kode, som medvirker at de forskellige knapper sender folk til den rigtigte skærm 
 onEvent("button2","click", function(){
 
   
   setPosition("text_area4", storXverdi, 55, 1, 1);
   setPosition("text_area5", storXverdi, 140, 200, 1);
 
-  for (var i=0; i<boger.length; i++){bogliste += boger[i] + "\n"}
-  if((getXPosition("text_area6")==30)){
+  for (var i=0; i<boger.length; i++){bogliste += boger[i] + "\n"} //Her skrives bøgerne er blevet indtastet ind på en liste, så der kan vises en liste og de bøger som kunden ønsker at komme af med
+  if((getXPosition("text_area6")==30))//Her tjekkes hvilken side de er på eftersom text_area6s postion afhænger af dette 
+  {
     setText("text_area6","Tak for din donation, din kode vil komme om 3 sekunder");
     setTimeout(function() {
+      //Alt setPosition koden også videre her er til for at lave en skærm ændring
         setPosition("Whitebutton", storXverdi, 45, 1, 1);
   setPosition("text_area4", storXverdi, 55, 1, 1);
   setPosition("text_area5", storXverdi, 140, 200, 1);
@@ -167,7 +169,7 @@ onEvent("button2","click", function(){
   setPosition("text_area6", storXverdi, 45, 275, 210);
   console.log("3000 milliseconds have elapsed");
   setScreen("Code");
-  setText("text_code","Din kode er følgende: \n" + randomNumber(100000,999999));
+  setText("text_code","Din kode er følgende: \n" + randomNumber(100000,999999));//Her udskrives en kode til feltet
   }, 3000);  } else{
   setPosition("text_area6", 30, 45, 275, 210);
   setText("text_area6","Vil du donere følgenede bør \n" + bogliste);}
@@ -181,10 +183,12 @@ onEvent("button4","click", function(){
   setPosition("text_area4", storXverdi, 55, 1, 1);
   setPosition("text_area5", storXverdi, 140, 200, 1);
 
-  for (var i=0; i<boger.length; i++){bogliste += boger[i] + "\n"}
-  if((getXPosition("text_area6")==30)){
+  for (var i=0; i<boger.length; i++){bogliste += boger[i] + "\n"} // dette er magen til ovenfor
+  if((getXPosition("text_area6")==30))//Her tjekkes hvilken side de er på eftersom text_area6s postion afhænger af dette 
+  {
     setText("text_area6","Tak for dit salg, din kode vil komme om 3 sekunder");
     setTimeout(function() {
+      //Her sker der blot et skærm skifte
         setPosition("Whitebutton", storXverdi, 45, 1, 1);
   setPosition("text_area4", storXverdi, 55, 1, 1);
   setPosition("text_area5", storXverdi, 140, 200, 1);
@@ -204,7 +208,7 @@ onEvent("button4","click", function(){
   setPosition("text_input2",storXverdi,360,200,30);
    setPosition("text_area6", storXverdi, 45, 275, 210);
     setScreen("Code");
-  setText("text_code","Din kode er følgende: \n" + randomNumber(100000,999999));
+  setText("text_code","Din kode er følgende: \n" + randomNumber(100000,999999));//Her udskrives en kode til feltet
   console.log("3000 milliseconds have elapsed");
   }, 3000);  } else{
   setPosition("text_area6", 30, 45, 275, 210);
@@ -214,12 +218,13 @@ onEvent("button4","click", function(){
 });
 
 onEvent("button15","click",function(){
-  for (var i=0; i<boger.length; i++){
+  for (var i=0; i<boger.length; i++){//Den følgende løkke fjerner bøger fra listen hvis dette ønskes af kunden
     if(boger[i]==getText("text_input2")){
       removeItem(boger,i);
       bogliste = "";
-      for (var j=0; j<boger.length; j++){bogliste += boger[j] + "\n"}
-      if(getXPosition("button2")==180){
+      for (var j=0; j<boger.length; j++){bogliste += boger[j] + "\n"} //Her tilføjes den nye liste til vores string
+      if(getXPosition("button2")==180) //Her testes om der doneres eller om der sælges, og vælger den rigtige tekst ud fra dette
+      {
         setText("text_area6","Vil du donere følgenede bør \n" + bogliste);
       } else{setText("text_area6","Vil du sælge følgenede bør \n" + bogliste);}
       
