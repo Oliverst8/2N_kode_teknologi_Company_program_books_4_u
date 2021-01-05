@@ -1,0 +1,237 @@
+var boger = [];
+var bogliste = "";
+var storXverdi = 1000;
+onEvent("button3", "click", function() {
+  appendItem(boger,getText("text_input1"));
+  setText("text_input1","");
+});
+
+
+
+onEvent("Sælg", "click", function() {
+  setScreen("Sælgd_din_bog_screen");
+});
+onEvent("F_A_Q", "click", function() {
+  setScreen("FAQ_screen");
+});
+onEvent("Omkring_os", "click", function() {
+  setScreen("Omkringos");
+});
+onEvent("Place_holder", "click", function() {
+  setScreen("Placeholder");
+});
+onEvent("Forside_knap", "click", function() {
+  setScreen("Home_screen");
+});
+
+onEvent("button11", "click", function() {
+  setScreen("Sælgd_din_bog_screen");
+});
+onEvent("Place_holder_button", "click", function() {
+  setScreen("Sælgd_din_bog_screen");
+});
+onEvent("button12", "click", function() {
+  setScreen("Home_screen");
+});
+onEvent("button14", "click", function() {
+  setScreen("Sælgd_din_bog_screen");
+});
+onEvent("button13", "click", function() {
+  setScreen("Home_screen");
+});
+
+
+onEvent("button6", "click", function() {
+  setScreen("Sælgd_din_bog_screen");
+});
+onEvent("button10", "click", function() {
+  setScreen("Placeholder");
+});
+onEvent("button7", "click", function() {
+  setScreen("Home_screen");
+});
+onEvent("button9", "click", function() {
+  setScreen("FAQ_screen");
+});
+onEvent("button8", "click", function() {
+  setScreen("Omkringos");
+});
+
+onEvent("button23", "click", function() {
+  setScreen("Sælgd_din_bog_screen");
+});
+onEvent("button27", "click", function() {
+  setScreen("Placeholder");
+});
+onEvent("button24", "click", function() {
+  setScreen("Home_screen");
+});
+onEvent("button26", "click", function() {
+  setScreen("FAQ_screen");
+});
+onEvent("button25", "click", function() {
+  setScreen("Omkringos");
+});
+
+onEvent("button16", "click", function() {
+  setScreen("Sælgd_din_bog_screen");
+});
+onEvent("button20", "click", function() {
+  setScreen("Placeholder");
+});
+onEvent("button17", "click", function() {
+  setScreen("Home_screen");
+});
+onEvent("button19", "click", function() {
+  setScreen("FAQ_screen");
+});
+onEvent("button18", "click", function() {
+  setScreen("Omkringos");
+});
+
+
+
+onEvent("image1","click", function(){
+  setScreen("Home_screen");
+});
+
+
+
+onEvent("Sælg_knap","click", function(){
+  setPosition("Whitebutton", 15, 45, 300, 300);
+  setPosition("text_area2", 90, 55, 135, 60);
+  setPosition("text_area3", 65, 140, 200, 100);
+  setPosition("button5", 40, 270, 100, 40);
+  setPosition("button4", 180, 270, 100, 40);
+    setPosition("text_input1",30,220,200,30);
+  setPosition("button3",235,220,55,30);
+  setPosition("button15",220,360,60,30);
+  setPosition("text_input2",10,360,200,30);
+});
+
+onEvent("button5","click", function(){
+  setPosition("Whitebutton", storXverdi, 45, 1, 1);
+  setPosition("text_area2", storXverdi, 55, 1, 1);
+  setPosition("text_area3", storXverdi, 140, 200, 1);
+  setPosition("button5", storXverdi, 40, 1, 1);
+  setPosition("button4", storXverdi, 40, 1, 1);
+  setPosition("text_input1",storXverdi,220,200,30);
+  setPosition("button3",storXverdi,220,55,30);
+  setPosition("button15",storXverdi,360,60,30);
+  setPosition("text_input2",storXverdi,360,200,30);
+   setPosition("text_area6", storXverdi, 45, 275, 210);
+});
+
+onEvent("Donor_knap","click", function(){
+  setPosition("Whitebutton", 15, 45, 300, 300);
+  setPosition("text_area4", 75, 55, 160, 55);
+  setPosition("text_area5", 65, 140, 200, 100);
+  setPosition("button1", 40, 270, 100, 40);
+  setPosition("button2", 180, 270, 100, 40);
+  setPosition("text_input1",30,220,200,30);
+  setPosition("button3",235,220,55,30);
+  setPosition("button15",220,360,60,30);
+  setPosition("text_input2",10,360,200,30);
+});
+
+onEvent("button1","click", function(){
+  setPosition("Whitebutton", storXverdi, 45, 1, 1);
+  setPosition("text_area4", storXverdi, 55, 1, 1);
+  setPosition("text_area5", storXverdi, 140, 200, 1);
+  setPosition("button1", storXverdi, 40, 1, 1);
+  setPosition("button2", storXverdi, 40, 1, 1);
+  setPosition("text_input1",storXverdi,220,200,30);
+  setPosition("button3",storXverdi,220,55,30);
+  setPosition("text_area6", storXverdi, 45, 275, 210);
+  setPosition("button15",storXverdi,360,60,30);
+  setPosition("text_input2",storXverdi,360,200,30);
+});
+
+onEvent("button2","click", function(){
+
+  
+  setPosition("text_area4", storXverdi, 55, 1, 1);
+  setPosition("text_area5", storXverdi, 140, 200, 1);
+
+  for (var i=0; i<boger.length; i++){bogliste += boger[i] + "\n"}
+  if((getXPosition("text_area6")==30)){
+    setText("text_area6","Tak for din donation, din kode vil komme om 3 sekunder");
+    setTimeout(function() {
+        setPosition("Whitebutton", storXverdi, 45, 1, 1);
+  setPosition("text_area4", storXverdi, 55, 1, 1);
+  setPosition("text_area5", storXverdi, 140, 200, 1);
+  setPosition("button1", storXverdi, 40, 1, 1);
+  setPosition("button2", storXverdi, 40, 1, 1);
+  setPosition("text_input1",storXverdi,220,200,30);
+  setPosition("button3",storXverdi,220,55,30);
+  setPosition("text_area6", storXverdi, 45, 275, 210);
+  console.log("3000 milliseconds have elapsed");
+  setScreen("Code");
+  setText("text_code","Din kode er følgende: \n" + randomNumber(100000,999999));
+  }, 3000);  } else{
+  setPosition("text_area6", 30, 45, 275, 210);
+  setText("text_area6","Vil du donere følgenede bør \n" + bogliste);}
+  setPosition("text_input2",10,360,200,30);
+  setPosition("button15",220,360,60,30);
+});
+
+onEvent("button4","click", function(){
+
+  
+  setPosition("text_area4", storXverdi, 55, 1, 1);
+  setPosition("text_area5", storXverdi, 140, 200, 1);
+
+  for (var i=0; i<boger.length; i++){bogliste += boger[i] + "\n"}
+  if((getXPosition("text_area6")==30)){
+    setText("text_area6","Tak for dit salg, din kode vil komme om 3 sekunder");
+    setTimeout(function() {
+        setPosition("Whitebutton", storXverdi, 45, 1, 1);
+  setPosition("text_area4", storXverdi, 55, 1, 1);
+  setPosition("text_area5", storXverdi, 140, 200, 1);
+  setPosition("button1", storXverdi, 40, 1, 1);
+  setPosition("button2", storXverdi, 40, 1, 1);
+  setPosition("text_input1",storXverdi,220,200,30);
+  setPosition("button3",storXverdi,220,55,30);
+  setPosition("text_area6", storXverdi, 45, 275, 210);
+    setPosition("Whitebutton", storXverdi, 45, 1, 1);
+  setPosition("text_area2", storXverdi, 55, 1, 1);
+  setPosition("text_area3", storXverdi, 140, 200, 1);
+  setPosition("button5", storXverdi, 40, 1, 1);
+  setPosition("button4", storXverdi, 40, 1, 1);
+    setPosition("text_input1",storXverdi,220,200,30);
+  setPosition("button3", storXverdi,220,55,30);
+  setPosition("button15",storXverdi,360,60,30);
+  setPosition("text_input2",storXverdi,360,200,30);
+   setPosition("text_area6", storXverdi, 45, 275, 210);
+    setScreen("Code");
+  setText("text_code","Din kode er følgende: \n" + randomNumber(100000,999999));
+  console.log("3000 milliseconds have elapsed");
+  }, 3000);  } else{
+  setPosition("text_area6", 30, 45, 275, 210);
+  setText("text_area6","Vil du sælge følgenede bør \n" + bogliste);}
+  setPosition("text_input2",10,360,200,30);
+  setPosition("button15",220,360,60,30);
+});
+
+onEvent("button15","click",function(){
+  for (var i=0; i<boger.length; i++){
+    if(boger[i]==getText("text_input2")){
+      removeItem(boger,i);
+      bogliste = "";
+      for (var j=0; j<boger.length; j++){bogliste += boger[j] + "\n"}
+      if(getXPosition("button2")==180){
+        setText("text_area6","Vil du donere følgenede bør \n" + bogliste);
+      } else{setText("text_area6","Vil du sælge følgenede bør \n" + bogliste);}
+      
+    }
+    
+  }
+  setText("text_input2","");
+});
+
+
+
+
+onEvent("button21", "click", function( ) {
+	setScreen("Home_screen");
+});
